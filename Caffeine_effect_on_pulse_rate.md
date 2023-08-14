@@ -197,16 +197,6 @@ Pval_treat = 1 - pf(F_treat, 2, 2)
 
 ## Analysis of Latin Square Design ANOVA Table
 
-Given the degrees of freedom $n - 1 = 3-1 = 2$ and
-$(n-1)(n-2) = (2)(1) = 2$, along with following F-values:
-
-1.  F-statistic = 19 (coral)
-2.  F-value \[`Day`\] = 156.471 (navyblue)
-3.  F-value \[`Participant`\] = 221.453 (limegreen)
-4.  F-value \[`Caffeine`\] = 64.865 (purple)
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-35-1.png)<!-- -->
-
 We can see that both our blocking factors \[`Day` and `Participants`\]
 are statistically significant, i.e., null hypothesis rejected as p-value
 \< 0.05. This implies that even upon taking into account the effects of
@@ -246,8 +236,6 @@ Tukey_posthoc
     ## C - A == 0  2.2520   1.0361  3.4679
     ## C - B == 0  0.5270  -0.6889  1.7429
 
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-37-1.png)<!-- -->
-
 We can see that the paired-groups B-A \[100 mg caffeine vs 50 mg
 caffeine\] and groups C-A \[200 mg caffeine vs 50 mg caffeine\] are
 statistically significant. However, the paired-group C-B \[200 mg vs 100
@@ -266,19 +254,6 @@ and its corresponding means and sd in relation to `Decrease`.
     ## 1 A         3  9.55 0.510
     ## 2 B         3 11.3  3.85 
     ## 3 C         3 11.8  3.03
-
-Given below is a 2d line plot where the x-axis is our treatment factor
-`Caffeine` and y-axis is our response `Decrease`. This plot allows us to
-see how the three levels of caffeine quantity affects response.
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-39-1.png)<!-- -->
-
-Given below is a 3d interactive scatter plot where the x-axis is our row
-blocking factor `Day`, y-axis is our column blocking factor
-`Participant`, and z-axis is our response `Decrease`. This plot allows
-us to see how the two blocking factors affect our response.
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-40-1.png)<!-- -->
 
 # Conclusion
 
