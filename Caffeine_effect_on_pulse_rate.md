@@ -1,7 +1,4 @@
-Studying the effect of caffeine on pulse rate
-================
-S. Sudhir
-2023-05-11
+# Studying the effect of caffeine on pulse rate
 
 # Introduction
 
