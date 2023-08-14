@@ -120,80 +120,6 @@ Fingertip](https://www.amazon.com/dp/B08FFHG69C?psc=1&ref=ppx_yo2ov_dt_b_product
   approximately 45 minutes, then re-took measurements for 5 minutes and
   recorded the data.
 
-# Data Collected
-
-## Day 1
-
-### Participant 1 \[50 mg\]
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
-
-    [1] "The difference in average pulse rate before and after consuming 50 mg pill for Participant 1 is 8.997 (y_11A)"
-
-### Participant 2 \[200 mg\]
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
-
-    [1] "The difference in average pulse rate before and after consuming 200 mg pill for Participant 2 is 12.323 (y_12C)"
-
-### Participant 3 \[100 mg\]
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
-
-    [1] "The difference in average pulse rate before and after consuming 100 mg caffeine pill for Participant 3 is 8.193 (y_13B)"
-
-**Visualizing Data for Day 1**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
-
-## Day 2
-
-### Participant 1 \[100 mg\]
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
-
-    [1] "The difference in average pulse rate before and after consumption of 100 mg pill in the afternoon for Participant 1 is 10.043 (y_21B)"
-
-### Participant 2 \[50 mg\]
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
-
-    [1] "The difference in average pulse rate before and after consuming 50 mg pill for Participant 2 is 9.667 (y_22A)"
-
-### Participant 3 \[200 mg\]
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
-
-    [1] "The difference in average pulse rate before and after consuming 200 mg pill for Participant 3 is 8.547 (y_23C)"
-
-**Visualizing Data for Day 2**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
-
-## Day 3
-
-### Participant 1 \[200 mg\]
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
-
-    [1] "The difference in average pulse rate before and after consuming 200 mg pill for Participant 1 is 14.547 (y_31C)"
-
-### Participant 2 \[100 mg\]
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
-
-    [1] "The difference in average pulse rate before and after consuming 100 mg pill for Participant 2 is 15.6 (y_32B)"
-
-### Participant 3 \[50 mg\]
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
-
-    [1] "The difference in average pulse rate before and after consuming 50 mg pill for Participant 3 is 9.997 (y_33A)"
-
-**Visualizing Data for Day 3**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
-
 # Data Table
 
           Participant 1 Participant 2 Participant 3
@@ -213,63 +139,6 @@ Fingertip](https://www.amazon.com/dp/B08FFHG69C?psc=1&ref=ppx_yo2ov_dt_b_product
     9           3   3        A    9.997
 
 # Analysis of Variance \[ANOVA\]
-
-## Linear Model for Latin Square Design
-
-The linear model for our Latin Square Design is as follows:
-
-$$
-y_{ijk} = \eta + \alpha_i + \beta_j + \tau_k + \epsilon_{ijk}
-$$
-
-where:
-
-- $\eta$ is the grand mean.
-
-- $\alpha_i$ is the i-th row effect \[`Day`\]
-
-- $\beta_j$ is the j-th column effect \[`Participant`\]
-
-- $\tau_k$ is the k-th treatment effect of the letters ($A,B,C$)
-  \[`Caffeine`\]
-
-- $\epsilon_{ijk}$ are independent $N(0,\sigma^2)$.
-
-There are no interaction terms as they cannot be estimated in an
-un-replicated experiment.
-
-Using the zero-sum constraints, we have that:
-
-$$
-y_{ijk} = \hat{\eta} + \hat{\alpha}_i + \hat{\beta}_j + \hat{\tau}_k + r_{ijk}
-$$
-
-where:
-
-- $\hat\eta = \bar{y}_{....}$
-
-- $\hat{\alpha}_i = (\bar{y}_{i..} - \bar{y}_{...})$
-
-- $\hat{\beta}_j = (\bar{y}_{.j.} - \bar{y}_{...})$
-
-- $\hat{\tau}_k = (\bar{y}_{..k} - \bar{y}_{...})$
-
-- $\hat{r}_{ijk} = (y_{ijk} - \bar{y}_{i..} - \bar{y}_{.j.} - \bar{y}_{..k} + 2 \bar{y}_{...})$
-
-Then, subtracting $\bar{y}_{...}$, squaring both sides, and summing over
-all observations, we have that:
-
-$$
-\underbrace{\displaystyle\sum_{(i,j,k) \in S} (y_{ijk} - \bar{y}_{...})^2}_{SSE_{total}}
- =\underbrace{\displaystyle\sum_{i \in \{1,2,3\}} 3(\bar{y}_{i..} - \bar{y}_{...})^2}_{SSE_{row}} + \underbrace{\displaystyle\sum_{j \in \{1,2,3\}} 3(\bar{y}_{.j.} - \bar{y}_{...})^2}_{SSE_{column}} + \underbrace{\displaystyle\sum_{k \in \{A,B,C\}} 3(\bar{y}_{..k} - \bar{y}_{...})^2}_{SSE_{treatment}} + \underbrace{\displaystyle\sum_{(i,j,k) \in S} (y_{ijk} - \bar{y}_{i..} - \bar{y}_{.j.} - \bar{y}_{..k} + 2 \bar{y}_{...})^2}_{SSE_{residual}}
-$$
-
-where the set of $3^2$ values dictated by the particular Latin square
-triplets $(i,j,k)$ is denoted by $S$.
-
-The above derivation tells us that the corrected total sum of squares on
-the left equals the sum of the row sum of squares, column sum of
-squares, treatment sum of squares, and residual sum of squares.
 
 ## Code for ANOVA Table Latin Square Design
 
@@ -330,20 +199,6 @@ Pval_treat = 1 - pf(F_treat, 2, 2)
     ## 5      Totals  8 65.293 28.484
 
 ## Analysis of Latin Square Design ANOVA Table
-
-The null hypothesis of our model is that there are no treatment effect
-differences, i.e.,
-
-$$
-H_0: \tau_i = \tau_j\;\;for\;all\;i,j \in \{A,B,C\}
-$$
-
-The alternative hypothesis of our model is that there is at least one
-treatment effect difference, i.e.,
-
-$$
-H_1: \tau_i \neq \tau_j\;\;for\;some\;i,j \in \{A,B.C\}
-$$
 
 Given the degrees of freedom $n - 1 = 3-1 = 2$ and
 $(n-1)(n-2) = (2)(1) = 2$, along with following F-values:
@@ -548,41 +403,3 @@ Caffeine and Adenosine Research. Vol 10:1. pp: 4-11. doi:
 Valentina Rakic and Valerie Burke and Lawrence J. Beilin. Effects of
 Coffee on Ambulatory Blood Pressure in Older Men and Women.
 Hypertension. Vol 33:3. pp: 869-873. doi: 10.1161/01.HYP.33.3.869.
-
-# Appendix
-
-**Data for [Participant 1 \[50 mg\]](#participant-1-50-mg)**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-41-1.png)<!-- -->
-
-**Data for [Participant 2 \[200 mg\]](#participant-2-200-mg)**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-42-1.png)<!-- -->
-
-**Data for [Participant 3 \[100 mg\]](#participant-3-100-mg)**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-43-1.png)<!-- -->
-
-**Data for [Participant 1 \[100 mg\]](#participant-1-100-mg)**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-44-1.png)<!-- -->
-
-**Data for [Participant 2 \[50 mg\]](#participant-2-50-mg)**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
-
-**Data for [Participant 3 \[200 mg\]](#participant-3-200-mg)**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
-
-**Data for [Participant 1 \[200 mg\]](#participant-1-200-mg)**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-47-1.png)<!-- -->
-
-**Data for [Participant 2 \[100 mg\]](#participant-2-100-mg)**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-48-1.png)<!-- -->
-
-**Data for [Participant 3 \[50 mg\]](#participant-3-50-mg)**
-
-![](Caffeine_effect_on_pulse_rate_files/figure-gfm/unnamed-chunk-49-1.png)<!-- -->
