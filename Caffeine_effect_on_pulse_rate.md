@@ -243,18 +243,6 @@ caffeine\] is not statistically significant. This could imply that the
 effects of caffeine on pulse rate is most significant when taking over
 50 mg, not when taking over 100 mg or 200 mg.
 
-## Visual Interpretation of Inference
-
-Given below is a summary table of our treatment factor group `Caffeine`
-and its corresponding means and sd in relation to `Decrease`.
-
-    ## # A tibble: 3 × 4
-    ##   group count  mean    sd
-    ##   <chr> <int> <dbl> <dbl>
-    ## 1 A         3  9.55 0.510
-    ## 2 B         3 11.3  3.85 
-    ## 3 C         3 11.8  3.03
-
 # Conclusion
 
 A 3-by-3 Latin Square Design was chosen to conduct this experiment with
