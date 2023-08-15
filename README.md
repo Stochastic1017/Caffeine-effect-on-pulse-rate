@@ -1,6 +1,6 @@
 # Studying the effect of caffeine on pulse rate
 
-**Note: This is a much shorter version of the actual paper. The README does not contain the formation of data table, many crucial plots, and mathematical derivations used to conduct the following analysis. The html file to view the entire project can be found [here](https://htmlpreview.github.io/ ).**
+**Note: This is a much shorter version of the actual paper. The README does not contain the formation of data table, many crucial plots, and mathematical derivations used to conduct the following analysis. The html file to view the entire project can be found [here](https://htmlpreview.github.io/https://github.com/Stochastic1017/Caffeine-effect-on-pulse-rate/blob/main/Caffeine_effect_on_pulse_rate.html).**
 
 # Introduction
 
