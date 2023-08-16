@@ -1,7 +1,5 @@
 # Studying the effect of caffeine on pulse rate
 
-**Note: This is a much shorter version of the actual paper. The README does not contain the formation of data table, many crucial plots, and mathematical derivations used to conduct the following analysis. The html file to view the entire project can be found [here](https://htmlpreview.github.io/?https://github.com/Stochastic1017/Caffeine-effect-on-pulse-rate/blob/main/Caffeine_effect_on_pulse_rate.html).**
-
 # Introduction
 
 I am interested in conducting a rigorous statistical analysis to study
@@ -119,7 +117,12 @@ Fingertip](https://www.amazon.com/dp/B08FFHG69C?psc=1&ref=ppx_yo2ov_dt_b_product
   approximately 45 minutes, then re-took measurements for 5 minutes and
   recorded the data.
 
-# Data Table
+- Finally, I took the mean pulse rate before and after, then took the difference to create the data table given below.
+
+# Data visualization and table
+
+<img src="https://github.com/Stochastic1017/Caffeine-effect-on-pulse-rate/blob/main/Images/Day1.png" width="300" height="300">|<img src="https://github.com/Stochastic1017/Caffeine-effect-on-pulse-rate/blob/main/Images/Day2.png" width="300" height="300">
+|<img src="https://github.com/Stochastic1017/Caffeine-effect-on-pulse-rate/blob/main/Images/Day3.png" width="300" height="300">
 
           Participant 1 Participant 2 Participant 3
     Day 1 "A (8.997)"   "C (12.323)"  "B (8.193)"  
@@ -197,6 +200,8 @@ Pval_treat = 1 - pf(F_treat, 2, 2)
     ## 4   Residuals  2  0.128  0.064              
     ## 5      Totals  8 65.293 28.484
 
+<img src="https://github.com/Stochastic1017/Caffeine-effect-on-pulse-rate/blob/main/Images/F-test.png" width="500" height="400">
+
 ## Analysis of Latin Square Design ANOVA Table
 
 We can see that both our blocking factors \[`Day` and `Participants`\]
@@ -238,12 +243,16 @@ Tukey_posthoc
     ## C - A == 0  2.2520   1.0361  3.4679
     ## C - B == 0  0.5270  -0.6889  1.7429
 
+<img src="https://github.com/Stochastic1017/Caffeine-effect-on-pulse-rate/blob/main/Images/confint.png" width="500" height="400">
+
 We can see that the paired-groups B-A \[100 mg caffeine vs 50 mg
 caffeine\] and groups C-A \[200 mg caffeine vs 50 mg caffeine\] are
 statistically significant. However, the paired-group C-B \[200 mg vs 100
 caffeine\] is not statistically significant. This could imply that the
 effects of caffeine on pulse rate is most significant when taking over
 50 mg, not when taking over 100 mg or 200 mg.
+
+<img src="https://github.com/Stochastic1017/Caffeine-effect-on-pulse-rate/blob/main/Images/Interaction%20effect.png" width="500" height="400">
 
 # Conclusion
 
